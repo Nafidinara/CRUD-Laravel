@@ -2,17 +2,20 @@
 <html>
 <head>
 	<title>Tutorial Membuat CRUD</title>
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
 </head>
 <body>
-
+	<div class="container">
+		<div class="body">
+			<div class="card-body">
 	<h3>Data Pegawai</h3>
 
-	<a href="/pekerja/tambah"> + Tambah Pegawai Baru</a>
-	
+	<a href="/pekerja/tambah"> + Tambah Pegawai Baru</a><br>
+	<a href="/pekerja/all"> Pegawai pagination</a>
 	<br/>
 	<br/>
 
-	<table border="1">
+	<table class="table table-bordered">
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -27,14 +30,15 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
-				<a href="/pekerja/edit/{{ $p->pegawai_id }}">Edit</a>
+				<a class="btn btn-warning btn-sm" href="/pekerja/edit/{{ $p->pegawai_id }}">Edit</a>
 				|
-				<a href="/pekerja/hapus/{{ $p->pegawai_id }}">Hapus</a>
+				<a class="btn btn-danger btn-sm" href="/pekerja/hapus/{{ $p->pegawai_id }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
-
+	</div>
+	</div>
+	</div>
 </body>
 </html>

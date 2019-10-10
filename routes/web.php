@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PekerjaController;
 
 // use Illuminate\Routing\Route;
 
@@ -54,3 +55,13 @@ Route::post('/pekerja/update','PekerjaController@update');
 
 //delete data dari db
 Route::get('/pekerja/hapus/{id}','PekerjaController@hapus');
+
+//pagination
+Route::get('/pekerja/all','PekerjaController@semua');
+//pencarian
+Route::get('/pekerja/all/cari','PekerjaController@cari');
+
+//route inputan validasi
+Route::get('/input','InputanController@input');
+//route handle validasi
+Route::post('/input/proses','InputanController@proses');

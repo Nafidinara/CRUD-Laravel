@@ -57,4 +57,25 @@ class PekerjaController extends Controller
         //direct ke page pekerja
         return redirect('/pekerja');
     }
+
+    public function semua(){
+        //method pagination
+        //mengambil data dari db
+        $pegawai = DB::table('pegawai')->paginate(10);
+        //menampilkan data pada view semua
+        return view('semua',['pegawai' => $pegawai]);
+    }
+
+    public function cari(Request $request){
+        //method untuk pencarian
+        $cari = $request ->cari;
+
+        //method untuk melakukan search data
+        $pegawai = DB::table('pegawai')
+        ->where('pegawai_nama','like','%'.$cari."%")
+        ->paginate();
+
+        //menampilkan di view cari
+        return view('semua',['pegawai' => $pegawai]);
+    }
 }

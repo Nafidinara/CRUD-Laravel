@@ -97,6 +97,7 @@
                 <div>
                 <h3><a href="/formulir">test input</a></h3>
                 <h3><a href="/pekerja">test CRUD</a></h3>
+                <h3><a href="/input">test validasi input</a></h3>
                 </div>
             </div>
         </div>
